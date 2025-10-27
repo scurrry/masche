@@ -1,1 +1,33 @@
-hi hello
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scrollytelling MVP</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <figure id="stage" aria-label="Visual der aktuellen Szene">
+      <img id="stage-img" src="assets/img1.svg" alt="Szenenvisual 1" />
+      <figcaption id="stage-cap">Szene 1</figcaption>
+    </figure>
+
+    <article id="story">
+      <section class="step" data-img="img1.svg" data-cap="Szene 1">
+        <h2>Kapitel 1</h2>
+        <p>Kurztext zur Szene 1 …</p>
+      </section>
+      <section class="step" data-img="img2.png" data-cap="Szene 2">
+        <h2>Kapitel 2</h2>
+        <p>Kurztext zur Szene 2 …</p>
+      </section>
+      <section class="step" data-img="img3.svg" data-cap="Szene 3">
+        <h2>Kapitel 3</h2>
+        <p>Kurztext zur Szene 3 …</p>
+      </section>
+    </article>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
