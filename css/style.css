@@ -1,12 +1,13 @@
-/* ---------- GLOBAL ---------- */
-* { 
-  box-sizing: border-box; 
+/* GLOBAL */
+* {
+  box-sizing: border-box;
 }
 
-body { 
-  margin: 0; 
-  font-family: system-ui, sans-serif; 
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
   background: #000;
+  color: #fff;
 }
 
 .layout {
@@ -18,8 +19,52 @@ body {
   flex-direction: column;
 }
 
-/* ---------- STEP / BILDER ---------- */
+/* INTRO */
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  z-index: 10000;
+  opacity: 1;
+  visibility: visible;
+  animation: intro-fade-out 1s ease forwards;
+  animation-delay: 3.5s;
+}
 
+.intro-screen h1 {
+  color: #fff;
+  font-size: clamp(2.8rem, 7vw, 4.8rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: intro-title-in 1.4s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes intro-title-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes intro-fade-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* STEPS / BILDER – Grundlayout */
 .step {
   position: relative;
   width: 100%;
@@ -27,101 +72,140 @@ body {
   display: grid;
   align-content: end;
   padding: 6vh 6vw;
-  overflow: hidden; /* wichtig für Übergänge */
+  overflow: hidden;
 }
 
-/* Bild Vollbild */
 .step img {
   position: absolute;
   inset: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  z-index: -2; /* Bild ganz hinten */
+  z-index: -2;
 }
 
-/* Gradient für Lesbarkeit */
+/* Dunkler Verlauf für Lesbarkeit */
 .step::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.55) 0%,
-    rgba(0,0,0,0.15) 35%,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.25) 35%,
     rgba(0,0,0,0) 60%
   );
-  z-index: -1; /* über dem Bild */
+  z-index: -1;
 }
 
-/* Text Layer */
-.step h2, 
-.step p {
-  color: white;
+.text-layer {
+  position: relative;
+  z-index: 3;
+}
+
+.text-layer h2,
+.text-layer p {
   text-shadow: 0 2px 12px rgba(0,0,0,0.6);
   max-width: 60ch;
 }
 
-.step p { 
-  margin-bottom: 0; 
-  font-size: 1.05rem; 
+.text-layer p {
+  margin-bottom: 0;
+  font-size: 1.05rem;
 }
 
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 900px) {
-  .step { padding: 4vh 5vw; }
-  .step h2 { font-size: 1.4rem; }
-}
-
-/* ---------- WOLLE TRANSITION (optional, pro Section) ---------- */
-/* du kannst diesen Block drinlassen oder löschen — deine Wahl */
-
-.wool-transition {
+/* ILLUSTRATIONEBENE */
+.illustration-layer {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -8vh;
-  height: 20vh;
+  inset: 0;
   pointer-events: none;
-  z-index: 5;
+  z-index: 2;
+}
 
-  background-image: url("../assets/illustrationen/wolle.png");
-  background-repeat: repeat-x;
-  background-size: auto 100%;
-  background-position: 0 0;
+/* MOBILE */
+@media (max-width: 900px) {
+  .step {
+    padding: 4vh 5vw;
+  }
 
-  animation: wool-strip-flow 18s linear infinite;
+  .text-layer h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* --- CINEMATIC SCROLL REVEAL --- */
+
+/* Grundzustand aller Steps */
+.step {
+  background: #fff; /* Weiss → Bild Übergang */
+  opacity: 0;
+  transform: translateY(80px);
+  transition:
+    opacity 1.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 1.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Wenn sichtbar (per JS gesetzt) */
+.step.is-visible {
   opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes wool-strip-flow {
-  0%   { background-position: 0 0; }
-  100% { background-position: -150vw 0; }
+/* Bild: Zoom + Fade */
+.step > img {
+  opacity: 0;
+  transform: scale(1.04) translateY(10px);
+  transition:
+    opacity 1.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 1.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* ---------- WOLLE OVERLAY (GANZ OBEN) ---------- */
+.step.is-visible > img {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
 
-.wool-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+/* Text & Illustrationen verzögert */
+/* Nur der Text macht die Scroll-Animation */
+.text-layer {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 1.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 1.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
 
+.step.is-visible .text-layer {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.25s; /* erst Bild, dann Text */
+}
+
+/* Illustration-Layer nur als „Bühne“, keine eigene Transform-Animation */
+.illustration-layer {
+  position: absolute;
+  inset: 0;
   pointer-events: none;
-  z-index: 9999;
-
-  background-image: url("../assets/illustrationen/wolle-textur.jpg");
-  background-repeat: repeat-x;
-  background-size: auto 55vh; 
-  background-position: 0 60vh;
-
-  opacity: 0.9;
-  animation: wool-overlay-flow 20s linear infinite;
+  z-index: 2;
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
-@keyframes wool-overlay-flow {
-  0%   { background-position: 0 60vh; }
-  100% { background-position: -200vw 60vh; }
+/* Frau-Animation nach Intro */
+.frau {
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+/* Klasse, die die Animation auslöst */
+.frau--animate {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

@@ -3,105 +3,131 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Scrollytelling</title>
-
-  <!-- CSS gehört in den HEAD -->
+  <title>Die Masche</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
-  <main class="layout">
-    <div class="wool-overlay"></div>
 
+  <!-- INTRO OVERLAY -->
+  <div class="intro-screen">
+    <h1>Die Masche</h1>
+  </div>
+
+  <!-- HAUPT-LAYOUT -->
+  <main class="layout">
     <article id="story">
 
-      <section class="step" data-img="bilder/treppe-halbnah.jpg" data-cap="Brockenhaus – Eingang">
-        <img src="assets/bilder/treppe-halbnah.jpg" alt="">
-        <h2>Kapitel 1</h2>
-        <p>Text kommt später.</p>
-        <div class="wool-transition"></div>
+      <!-- STEP 1 – mit Frau (direkt sichtbar) -->
+      <section class="step is-visible">
+        <img src="assets/bilder/treppe-total-menschen.PNG" alt="Treppe mit Menschen">
+
+        <div class="illustration-layer">
+          <img 
+            src="assets/illustrationen/total-frau-mit-blumen.PNG"
+            alt="Frau mit Blumen"
+            class="frau"
+          />
+        </div>
+
+        <div class="text-layer">
+          <h2>Kapitel 1</h2>
+          <p>Text kommt später.</p>
+        </div>
       </section>
 
-      <section class="step" data-img="bilder/treppe-nah.jpg" data-cap="Brockenhaus – Stockwerk">
-        <img src="assets/bilder/treppe-nah.jpg" alt="">
-        <h2>Kapitel 2</h2>
-        <p>Text kommt später.</p>
-        <div class="wool-transition"></div>
+      <!-- Restliche Steps (ohne Frau) -->
+      <section class="step">
+        <img src="assets/illustrationen/handschuh-nah.PNG" alt="">
+        <div class="text-layer">
+          <h2>Kapitel 2</h2>
+          <p>Text kommt später.</p>
+        </div>
       </section>
 
-      <section class="step" data-img="bilder/treppe-nah-2.jpg" data-cap="Brockenhaus – Total">
+      <section class="step">
         <img src="assets/bilder/treppe-nah-2.jpg" alt="">
-        <h2>Kapitel 3</h2>
-        <p>Text kommt später.</p>
-        <div class="wool-transition"></div>
+        <div class="text-layer">
+          <h2>Kapitel 3</h2>
+          <p>Text kommt später.</p>
+        </div>
       </section>
 
-      <section class="step" data-img="bilder/brockenhaus-total.jpg" data-cap="Brockenhaus – Total">
+      <section class="step">
         <img src="assets/bilder/brockenhaus-total.jpg" alt="">
-        <h2>Kapitel 4</h2>
-        <p>Text kommt später.</p>
-        <div class="wool-transition"></div>
+        <div class="text-layer">
+          <h2>Kapitel 4</h2>
+          <p>Text kommt später.</p>
+        </div>
       </section>
 
-      <section class="step" data-img="bilder/brockenhaus-eingang.jpg" data-cap="Brockenhaus – Eingang">
+      <section class="step">
         <img src="assets/bilder/brockenhaus-eingang.jpg" alt="">
-        <h2>Kapitel 5</h2>
-        <p>Text kommt später.</p>
-        <div class="wool-transition"></div>
+        <div class="text-layer">
+          <h2>Kapitel 5</h2>
+          <p>Text kommt später.</p>
+        </div>
       </section>
 
-      <section class="step" data-img="bilder/kasse.jpg" data-cap="Kasse">
+      <section class="step">
         <img src="assets/bilder/kasse.jpg" alt="">
-        <h2>Kapitel 6</h2>
-        <p>Text kommt später.</p>
-        <div class="wool-transition"></div>
+        <div class="text-layer">
+          <h2>Kapitel 6</h2>
+          <p>Text kommt später.</p>
+        </div>
       </section>
 
-      <section class="step" data-img="bilder/brockenhaus-stockwerk.jpg" data-cap="Brockenhaus – Stockwerk">
+      <section class="step">
         <img src="assets/bilder/brockenhaus-stockwerk.jpg" alt="">
-        <h2>Kapitel 7</h2>
-        <p>Text kommt später.</p>
-        <div class="wool-transition"></div>
+        <div class="text-layer">
+          <h2>Kapitel 7</h2>
+          <p>Text kommt später.</p>
+        </div>
       </section>
 
-      <section class="step" data-img="bilder/gestell.jpg" data-cap="Gestell">
+      <section class="step">
         <img src="assets/bilder/gestell.jpg" alt="">
-        <h2>Kapitel 8</h2>
-        <p>Text kommt später.</p>
-        <div class="wool-transition"></div>
+        <div class="text-layer">
+          <h2>Kapitel 8</h2>
+          <p>Text kommt später.</p>
+        </div>
       </section>
 
-      <section class="step" data-img="bilder/gestell-nah.jpg" data-cap="Gestell – nah">
+      <section class="step">
         <img src="assets/bilder/gestell-nah.jpg" alt="">
-        <h2>Kapitel 9</h2>
-        <p>Text kommt später.</p>
-        <div class="wool-transition"></div>
+        <div class="text-layer">
+          <h2>Kapitel 9</h2>
+          <p>Text kommt später.</p>
+        </div>
       </section>
 
-      <section class="step" data-img="bilder/sofa-total.jpg" data-cap="Sofa – total">
+      <section class="step">
         <img src="assets/bilder/sofa-total.jpg" alt="">
-        <h2>Kapitel 10</h2>
-        <p>Text kommt später.</p>
-        <div class="wool-transition"></div>
+        <div class="text-layer">
+          <h2>Kapitel 10</h2>
+          <p>Text kommt später.</p>
+        </div>
       </section>
 
-      <section class="step" data-img="bilder/sofa-nah.jpg" data-cap="Sofa – nah">
+      <section class="step">
         <img src="assets/bilder/sofa-nah.jpg" alt="">
-        <h2>Kapitel 11</h2>
-        <p>Text kommt später.</p>
-        <div class="wool-transition"></div>
+        <div class="text-layer">
+          <h2>Kapitel 11</h2>
+          <p>Text kommt später.</p>
+        </div>
       </section>
 
-      <section class="step" data-img="bilder/spiegel.jpg" data-cap="Spiegel">
+      <section class="step">
         <img src="assets/bilder/spiegel.jpg" alt="">
-        <h2>Kapitel 12</h2>
-        <p>Text kommt später.</p>
-        <div class="wool-transition"></div>
+        <div class="text-layer">
+          <h2>Kapitel 12</h2>
+          <p>Text kommt später.</p>
+        </div>
       </section>
 
     </article>
   </main>
 
+  <!-- Script IMMER kurz vor </body> -->
   <script src="js/main.js"></script>
 </body>
 </html>
