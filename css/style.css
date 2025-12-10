@@ -135,50 +135,76 @@ body {
 
 /* --- CINEMATIC SCROLL REVEAL --- */
 
-/* Grundzustand aller Steps */
+/* CINEMATIC + MOTION BLUR */
 .step {
-  background: #fff; /* Weiss → Bild Übergang */
+  background: #fff;
   opacity: 0;
   transform: translateY(80px);
+  filter: blur(8px);
   transition:
-    opacity 1.6s cubic-bezier(0.22, 0.61, 0.36, 1),
-    transform 1.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+    opacity 2.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 2.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+    filter 2.4s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Wenn sichtbar (per JS gesetzt) */
 .step.is-visible {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0px);
 }
 
-/* Bild: Zoom + Fade */
+/* Nur Hintergrundbild */
+/* CINEMATIC + SUBTILER MOTION BLUR */
+.step {
+  background: #fff;
+  opacity: 0;
+  transform: translateY(60px);
+  filter: blur(3px);
+  transition:
+    opacity 1.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 1.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+    filter 1.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.step.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+}
+
+/* Hintergrundbild */
 .step > img {
   opacity: 0;
-  transform: scale(1.04) translateY(10px);
+  transform: scale(1.02) translateY(8px);
+  filter: blur(4px);
   transition:
     opacity 1.8s cubic-bezier(0.22, 0.61, 0.36, 1),
-    transform 1.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transform 1.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+    filter 1.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .step.is-visible > img {
   opacity: 1;
   transform: scale(1) translateY(0);
+  filter: blur(0px);
 }
 
-/* Text & Illustrationen verzögert */
-/* Nur der Text macht die Scroll-Animation */
+/* Text */
 .text-layer {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
+  filter: blur(2px);
   transition:
     opacity 1.4s cubic-bezier(0.22, 0.61, 0.36, 1),
-    transform 1.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transform 1.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+    filter 1.4s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .step.is-visible .text-layer {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 0.25s; /* erst Bild, dann Text */
+  filter: blur(0px);
+  transition-delay: 0.2s;
 }
 
 /* Illustration-Layer nur als „Bühne“, keine eigene Transform-Animation */
