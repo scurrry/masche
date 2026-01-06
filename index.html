@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Die Masche</title>
+  <title>Maglia dopo maglia</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
+<button id="soundToggle" class="sound-btn" aria-label="Sound umschalten">
+  <img id="soundIcon" src="assets/illustrationen/sound-off.svg" alt="Sound aus">
+</button>
   <!-- INTRO OVERLAY -->
   <div class="intro-screen">
-    <h1>Die Masche</h1>
+    <h1>Maglia dopo maglia</h1>
   </div>
 
   <!-- HAUPT-LAYOUT -->
@@ -18,116 +20,287 @@
     <article id="story">
 
       <!-- STEP 1 – mit Frau (direkt sichtbar) -->
-      <section class="step is-visible">
+  <section class="panel-group">
+    <div class="stage">
+      <section class="step">
         <img src="assets/bilder/treppe-total-menschen.PNG" alt="Treppe mit Menschen">
 
         <div class="illustration-layer">
-          <img 
+          <img
             src="assets/illustrationen/total-frau-mit-blumen.PNG"
             alt="Frau mit Blumen"
-            class="frau"
+            class="frau total-frau-mit-blumen"
           />
         </div>
 
+         <h2>Capitolo 1</h2>
         <div class="text-layer">
-          <h2>Kapitel 1</h2>
-          <p>Text kommt später.</p>
-        </div>
-      </section>
-
-      <!-- Restliche Steps (ohne Frau) -->
-      <section class="step">
-        <img src="assets/illustrationen/handschuh-nah.PNG" alt="">
-        <div class="text-layer">
-          <h2>Kapitel 2</h2>
-          <p>Text kommt später.</p>
+          <p>La città è piena.<br>
+            Di passi, di fretta, di vite che si incrociano.<br>
+            E in mezzo a tutto questo, qualcosa si perde.</p>
         </div>
       </section>
 
       <section class="step">
-        <img src="assets/bilder/treppe-nah-2.jpg" alt="">
+        <img src="assets/bilder/treppe-nah.jpg" alt="">
+
+           <div class="illustration-layer">
+          <img
+            src="assets/illustrationen/handschuh-nah-transparent.PNG"
+            alt="handschuh nah"
+            class="illu handschuh-nah"
+              />
+        </div>
+
+         <h2>Capitolo 2</h2>
         <div class="text-layer">
-          <h2>Kapitel 3</h2>
-          <p>Text kommt später.</p>
+          <p> Tra cemento e scarpe<br>
+              giace qualcosa di dimenticato.<br>
+              Rosso.<br>
+              In silenzio.</p>
         </div>
       </section>
 
       <section class="step">
-        <img src="assets/bilder/brockenhaus-total.jpg" alt="">
+        <img src="assets/bilder/treppe-nah-2.jpg" alt="Treppe nah">
+
+         <div class="illustration-layer">
+          <img 
+            src="assets/illustrationen/handschuh-aufheben.PNG"
+            alt="handschuh-aufheben"
+            class="handschuh-aufheben"
+         />
+        </div>
+       
+        <h2>Capitolo 3</h2>
         <div class="text-layer">
-          <h2>Kapitel 4</h2>
-          <p>Text kommt später.</p>
+          <p> A volte basta un gesto<br>
+              per vedere<br>
+              ciò che gli altri non notano.</p>
         </div>
       </section>
+
+       <section class="step">
+        <img src="assets/bilder/treppe-halbnah.jpg" alt="">
+
+         <div class="illustration-layer">
+          <img 
+            src="assets/illustrationen/total-handschuh-aufheben.PNG"
+            alt="total-handschuh-aufheben"
+            class="illu cap3-left"
+         />
+        </div>
+        <h2>Capitolo 4</h2>
+        <div class="text-layer">
+          <p> Si china.<br>
+              Non per dovere,<br>
+              ma per attenzione.</p>
+        </div>
+      </section>
+
+<section class="step">
+  <img src="assets/bilder/brockenhaus-total.jpg" alt="">
+
+  <div class="illustration-layer">
+    <img 
+      src="assets/illustrationen/mann-weg-ins-brocki.png"
+      alt="mann-weg-ins-brocki"
+      class="illu mann-weg from-bottom-first"
+    />
+  </div>
+
+  <div class="illustration-layer">
+    <img 
+      src="assets/illustrationen/velofahrer.png"
+      alt="velofahrer"
+      class="illu velofahrer from-bottom-right-late"
+    />
+  </div>
+
+  <h2>Capitolo 5</h2>
+  <div class="text-layer">
+    <p>Non porta con sé nulla di prezioso.<br>
+      Solo qualcosa<br>
+      che a qualcuno manca.</p>
+  </div>
+</section>
 
       <section class="step">
         <img src="assets/bilder/brockenhaus-eingang.jpg" alt="">
+
+        <div class="illustration-layer">
+          <img 
+            src="assets/illustrationen/eingang-ins-brocki.png"
+            alt="eingang-ins-brocki"
+            class="illu eingang-ins-brocki"
+         />
+          </div>
+
+        <h2>Capitolo 6</h2>
         <div class="text-layer">
-          <h2>Kapitel 5</h2>
-          <p>Text kommt später.</p>
+          <p>  Ogni gradino è un passaggio.<br>
+              Da perso<br>
+              a forse.</p>
         </div>
       </section>
 
       <section class="step">
         <img src="assets/bilder/kasse.jpg" alt="">
-        <div class="text-layer">
-          <h2>Kapitel 6</h2>
-          <p>Text kommt später.</p>
+
+        <div class="illustration-layer">
+          <img 
+            src="assets/illustrationen/frau-an-kasse.png"
+            alt="frau-an-kasse"
+            class="illu frau-an-kasse"
+         />
+        </div>  
+
+        <div class="illustration-layer">
+          <img 
+            src="assets/illustrationen/mann-an-kasse.png"
+            alt="mann-an-kasse"
+            class="illu mann-an-kasse"
+         />
+          </div>
+
+
+        <h2>Capitolo 7</h2>
+          <div class="text-layer">
+          <p>  Lasciato lì.<br>
+              Non abbandonato,<br>
+              ma affidato.</p>
         </div>
       </section>
 
       <section class="step">
         <img src="assets/bilder/brockenhaus-stockwerk.jpg" alt="">
-        <div class="text-layer">
-          <h2>Kapitel 7</h2>
-          <p>Text kommt später.</p>
+
+        <div class="illustration-layer">
+          <img 
+            src="assets/illustrationen/frau-treppe-hoch.png"
+            alt="frau-treppe-hoch"
+            class="illu frau-treppe-hoch"
+         />
+          </div>
+
+        <h2>Capitolo 8</h2>
+          <div class="text-layer">
+          <p> Arriva anche lei da fuori.<br>
+              Con ricordi addosso<br>
+              e tempo nelle mani.</p>
         </div>
       </section>
 
       <section class="step">
         <img src="assets/bilder/gestell.jpg" alt="">
-        <div class="text-layer">
-          <h2>Kapitel 8</h2>
-          <p>Text kommt später.</p>
-        </div>
-      </section>
 
-      <section class="step">
-        <img src="assets/bilder/gestell-nah.jpg" alt="">
-        <div class="text-layer">
-          <h2>Kapitel 9</h2>
-          <p>Text kommt später.</p>
+        <div class="illustration-layer">
+          <img 
+            src="assets/illustrationen/frau-mit-kiste.png"
+            alt="frau-mit-kiste"
+            class="illu frau-mit-kiste"
+         />
+          </div>
+      
+        <h2>Capitolo 9</h2>
+          <div class="text-layer">
+          <p>Un insieme di vite.<br>
+            Cose senza nome.<br>
+            Storie senza voce.</p>
         </div>
       </section>
 
       <section class="step">
         <img src="assets/bilder/sofa-total.jpg" alt="">
-        <div class="text-layer">
-          <h2>Kapitel 10</h2>
-          <p>Text kommt später.</p>
+
+        <div class="illustration-layer">
+          <img 
+            src="assets/illustrationen/frau-auf-sofa.png"
+            alt="frau-auf-sofa"
+            class="illu frau-auf-sofa"
+         />
+          </div>
+
+        <h2>Capitolo 10</h2>
+          <div class="text-layer">
+          <p>A volte bisogna disfare<br>
+            per capire<br>
+            cosa resta davvero.</p>
         </div>
       </section>
 
       <section class="step">
         <img src="assets/bilder/sofa-nah.jpg" alt="">
+
+        <div class="illustration-layer">
+          <img 
+            src="assets/illustrationen/frau-over-shoulder.PNG"
+            alt="frau-over-shoulder"
+            class="illu frau-over-shoulder"
+         />
+          </div>
+       
+        <h2>Capitolo 11</h2>
         <div class="text-layer">
-          <h2>Kapitel 11</h2>
-          <p>Text kommt später.</p>
+          <p>I fili si intrecciano di nuovo.<br>
+            Non come prima.<br>
+            Ma nel modo giusto.</p>
         </div>
       </section>
 
       <section class="step">
         <img src="assets/bilder/spiegel.jpg" alt="">
-        <div class="text-layer">
-          <h2>Kapitel 12</h2>
-          <p>Text kommt später.</p>
-        </div>
-      </section>
 
-    </article>
-  </main>
+        <div class="illustration-layer">
+          <img 
+            src="assets/illustrationen/frau-im-spiegel.png"
+            alt="frau-im-spiegel"
+            class="illu frau-im-spiegel"
+         />
+          </div>
 
-  <!-- Script IMMER kurz vor </body> -->
+        <h2>Capitolo 12</h2>
+          <div class="text-layer">
+          <p>Ciò che sembrava perso<br>
+            ha trovato un posto.<br>
+            Forse non dove è iniziato,<br>
+            ma esattamente dove serve.</p>
+      </div>
+    </section>
+
+    <section class="step authors">
+      <img src="assets/bilder/sofa-total.jpg" alt="">
+
+      <div class="illustration-layer">
+        <img
+          src="assets/illustrationen/laura.PNG"
+          alt="Laura"
+          class="illu laura"
+        />
+          <span class="author-name author-laura">Laura</span>
+</div>
+      <div class="illustration-layer">
+        <img
+          src="assets/illustrationen/selina.PNG"
+          alt="Selina"
+          class="illu selina"
+        />
+          <span class="author-name author-selina">Selina</span>
+      </div>
+
+      <h2>Capitolo 13</h2>
+      <div class="text-layer">
+        <p>Le autrici.</p>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+  <!-- Audio IM BODY, vor dem Script -->
+  <audio id="audRain" src="assets/afx/rain.wav" preload="auto" loop></audio>
+  <audio id="audMusic" src="assets/afx/music.wav" preload="auto" loop></audio>
+  <audio id="audCash" src="assets/afx/cash-register.wav" preload="auto"></audio>
+
   <script src="js/main.js"></script>
 </body>
-</html>
