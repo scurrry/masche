@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("intro-active");
 
   // ----------------------------
-  // AUDIO (WebAudio Crossfades) (test)
+  // AUDIO (WebAudio Crossfades)
   // ----------------------------
   const elRain = document.getElementById("audRain");
   const elMusic = document.getElementById("audMusic");
