@@ -569,8 +569,8 @@ body.intro-active .sound-btn{
   right: 50px;
   z-index: 20000;
 
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
 
   padding: 0;
   border-radius: 999px;
@@ -589,7 +589,240 @@ body.intro-active .sound-btn{
 }
 
 .sound-btn img{
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   display: block;
+}
+
+.sound-btn{
+  background: transparent;
+  border: none;
+  backdrop-filter: none;
+}
+
+/* =========================
+   MOBILE – CLEAN BLOCK (keine Transform-Killer)
+========================= */
+@media (max-width: 768px){
+
+  /* =========================
+     TYPO + UI
+  ========================= */
+
+  /* INTRO TITLE */
+  .intro-screen h1{
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+    letter-spacing: 0.12em;
+    line-height: 1.15;
+  }
+
+  /* Kapitel-Titel */
+  .step h2{
+    font-size: 1.4rem;
+    letter-spacing: 0.18em;
+    top: 4vh;
+    left: 5vw;
+  }
+
+  /* Text unten */
+  .text-layer{
+    bottom: 8vh;
+    padding: 0 6vw;
+  }
+
+  .text-layer p{
+    font-size: 1.15rem;
+    line-height: 1.35;
+    max-width: 100%;
+    letter-spacing: 0.02em;
+  }
+
+  /* Autoren-Namen */
+  .author-name{
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    bottom: 10%;
+  }
+
+  /* Sound Button */
+  .sound-btn{
+    width: 64px;
+    height: 64px;
+    top: 16px;
+    right: 16px;
+  }
+
+  .sound-btn img{
+    width: 32px;
+    height: 32px;
+  }
+
+  .step{
+    background: transparent;
+  }
+
+  /* Background: minimal überziehen */
+  .step > img{
+    width: 104% !important;
+    height: 104% !important;
+    left: -2% !important;
+    top: -2% !important;
+
+    object-fit: cover !important;
+    object-position: 50% 50% !important;
+
+  }
+
+
+  /* =========================
+     CAPITOLO 1 – Frau im Fokus (ohne schwebend)
+  ========================= */
+
+  .stage > .step:nth-of-type(1) .illustration-layer{
+    overflow: hidden;
+  }
+
+  .stage > .step:nth-of-type(1) img.frau{
+    top: auto !important;
+    bottom: -2vh !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 180% !important;
+    height: 200% !important;
+
+    object-fit: contain !important;
+    object-position: left bottom !important;
+
+  }
+
+
+  /* =========================
+     CAPITOLO 4/5/6 – Illu leicht runter
+  ========================= */
+
+  .stage .step:nth-of-type(4) .illustration-layer{ transform: translateY(4%); }
+  .stage .step:nth-of-type(5) .illustration-layer{ transform: translateY(8%); }
+  .stage .step:nth-of-type(6) .illustration-layer{ transform: translateY(5%); }
+
+
+  /* =========================
+     CAPITOLO 8 – Background + Illu müssen matchen
+  ========================= */
+
+  .stage .step:nth-of-type(8){
+    overflow: hidden;
+  }
+
+  .stage .step:nth-of-type(8) > img{
+    width: 108% !important;
+    height: 108% !important;
+    left: -4% !important;
+    top: -4% !important;
+
+    object-fit: cover !important;
+    object-position: 55% 35% !important;
+  }
+
+  .stage .step:nth-of-type(8) .illu.frau-treppe-hoch{
+    width: 108% !important;
+    height: 108% !important;
+    left: -4% !important;
+    top: -4% !important;
+
+    object-fit: cover !important;
+    object-position: 55% 35% !important;
+
+  }
+
+
+  @media (max-width: 768px){
+
+  /* CAPITOLO 9 – Background + Illu MATCH */
+  .stage .step:nth-of-type(9){
+    overflow: hidden;
+  }
+  .stage .step:nth-of-type(9) > img{
+    width: 106% !important;
+    height: 106% !important;
+    left: -3% !important;
+    top: -3% !important;
+
+    object-fit: cover !important;
+    object-position: 47% 50% !important; 
+  }
+
+  .stage .step:nth-of-type(9) .illu{
+    width: 400% !important;
+    height: 106% !important;
+    left: -142% !important;
+    top: -3% !important;
+
+    object-fit: contain !important;
+  }
+  .stage .step:nth-of-type(9) .illustration-layer{
+    transform: translateY(3%);
+  }
+
+}
+
+  /* =========================
+     CAPITOLO 10 – Illu etwas runter
+  ========================= */
+
+  .stage .step:nth-of-type(10) .illustration-layer{
+    transform: translateY(6%);
+  }
+
+
+  /* =========================
+     CAPITOLO 12 – Frau im Spiegel frei positionierbar 
+  ========================= */
+
+  .stage .step:nth-of-type(12) .illu.frau-im-spiegel{
+    inset: auto !important;
+    width: 300% !important;
+    height: auto !important;
+
+    left: -40% !important;
+    bottom: -3% !important;
+
+    object-fit: contain !important;
+  }
+
+
+  /* =========================
+     CAPITOLO 13 – Autoren: sichtbar & kleiner + Namen kleiner
+  ========================= */
+
+  .stage .step.authors{
+    overflow: hidden;
+  }
+
+  .stage .step.authors .illu.laura,
+  .stage .step.authors .illu.selina{
+    inset: auto !important;
+    height: auto !important;
+    width: 240% !important;
+    bottom: -2% !important;
+    object-fit: contain !important;
+  }
+
+  .stage .step.authors .illu.laura{
+    left: -50% !important;
+  }
+
+  .stage .step.authors .illu.selina{
+    right: -50% !important;
+  }
+
+  .stage .step.authors .author-name{
+    font-size: 1.1rem !important;
+    letter-spacing: 0.14em !important;
+    bottom: 14% !important;
+  }
+
+  .stage .step.authors .author-laura{ left: 22% !important; }
+  .stage .step.authors .author-selina{ right: 22% !important; }
+
 }

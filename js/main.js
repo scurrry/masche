@@ -207,8 +207,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const soundBtn = document.getElementById("soundToggle");
 const soundIcon = document.getElementById("soundIcon");
 
-const ICON_ON = "assets/illustrationen/sound-on.svg";
-const ICON_OFF = "assets/illustrationen/sound-off.svg";
+const ICON_ON = "assets/illustrationen/sound-on.webp";
+const ICON_OFF = "assets/illustrationen/sound-off.webp";
 
 const updateIcon = () => {
   if (!soundIcon) return;
